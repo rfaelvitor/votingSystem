@@ -1,8 +1,17 @@
 package homeWork;
 
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
+
 
 public class project {
+
+    public static void bold(String text){
+        String bold = "\033[1m";
+        String reset = "\033[0m";
+        System.out.println(bold + text + reset);
+    }
 
     public static void greenColor(String text){
         String green = "\u001B[32m";
@@ -76,7 +85,7 @@ public class project {
                 if(matrizCandidatosEVotos != null) {
                     System.out.println("Candidatos disponíveis na eleição: ");
                     for (int i = 0; i < matrizCandidatosEVotos.length; i++) {
-                        System.out.print("\n[" + (i + 1) + "] " + matrizCandidatosEVotos[i][0]);
+                        bold("\n[" + (i + 1) + "] " + matrizCandidatosEVotos[i][0]);
                     }
 
                     int votacao;
@@ -116,6 +125,9 @@ public class project {
                 continue;
             } else if (acao == 4) {
                 if (matrizCandidatosEVotos != null) {
+
+                    Arrays.sort(matrizCandidatosEVotos, Comparator.comparingInt(o -> -(int) o[1]));
+
                     int totalVotos = 0;
 
                     //somando os votos
@@ -133,7 +145,7 @@ public class project {
                     }
 
                     for (int i = 0; i < matrizCandidatosEVotos.length; i++) {
-                        System.out.println(matrizCandidatosEVotos[i][0] + " - Votos: " + matrizCandidatosEVotos[i][1] + " - Porcentagem: " + String.format("%.2f", matrizCandidatosEVotos[i][2]) + "%");
+                        bold(matrizCandidatosEVotos[i][0] + " - Votos: " + matrizCandidatosEVotos[i][1] + " - Porcentagem: " + String.format("%.2f", matrizCandidatosEVotos[i][2]) + "%");
                     }
                 } else {
                     redColor("Nenhum candidato cadastrado ainda.");
