@@ -15,7 +15,7 @@ Foi desenvolvido para praticar **Java básico**, **arrays**, **loops**, **entrad
 
 1. Clone ou baixe o projeto.  
 2. Abra em uma IDE Java (como IntelliJ IDEA, Eclipse ou VS Code com extensão Java).  
-3. Compile e rode a classe `project.java` que está dentro do pacote `homeWork`.  
+3. Compile e rode a classe `project.java`.
 4. No console da IDE, siga as instruções:  
    - Escolha a opção desejada no menu digitando o número correspondente.  
    - Cadastre candidatos.  
